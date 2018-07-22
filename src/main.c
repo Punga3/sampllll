@@ -34,7 +34,7 @@ void wrut(unsigned int p)
 void wred(unsigned int p)
 {
 	 wchar_t emj;
-	 wscanf(L"%c",&emj);
+	 wscanf(L"%lc",&emj);
 	 value = emj;
 }
 
@@ -45,7 +45,7 @@ void chad(unsigned int p)
 
 int main()
 {
-	#ifdef LINUX
+	#ifdef linux
 		setlocale(LC_ALL,"cs_CZ.UTF-8");
 	#endif
 	#ifdef _WIN32
@@ -60,7 +60,7 @@ int main()
 	commands[1]->funct(0);
 	commands[0]->funct(0);
 
-	//wprintf(L"%lc",(wchar_t)L'✒')
+	wprintf(L"%lc",(wchar_t)L'✒');
 
 	return 0;
 }

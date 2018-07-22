@@ -52,15 +52,15 @@ int main()
 		_setmode(_fileno(stdout), _O_U8TEXT);
 	#endif
 
-	command* commands[] = {create_command("write",&wrut),
-			create_command("read",&wred),
-			create_command("set",&chad)};
+	command* commands[] = {create_command(L"write",&wrut),
+			create_command(L"read",&wred),
+			create_command(L"set",&chad)};
 
 
-	//commands[2]->funct((int)'✒');
-	//commands[0]->funct(0);
+	commands[2]->funct((unsigned int)L'✒');
+	commands[0]->funct(0);
 
-	wprintf(L"%lc",(wchar_t)L'✒');
+	//wprintf(L"%lc",(wchar_t)L'✒')
 
 	return 0;
 }

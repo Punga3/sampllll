@@ -45,6 +45,9 @@ void chad(unsigned int p)
 
 int main()
 {
+	#ifdef LINUX
+		setlocale(LC_ALL,"cs_CZ.UTF-8");
+	#endif
 	#ifdef _WIN32
 		_setmode(_fileno(stdout), _O_U8TEXT);
 	#endif

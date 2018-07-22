@@ -1,7 +1,13 @@
+//standard includes
 #include "stdio.h"
 #include "stdlib.h"
 #include "locale.h"
 #include "wchar.h"
+
+//custom includes
+#include "command.h"
+#include "sampllllvm.h"
+#include "commands.h"
 
 #ifdef _WIN32
 #include <io.h>
@@ -10,38 +16,6 @@
   #define _O_U8TEXT 0x00040000
 #endif
 #endif
-
-unsigned int value;
-
-typedef struct command{
-	wchar_t * name;
-	void(*funct)(unsigned int);
-} command;
-
-command* create_command(wchar_t *str, void(*sfun)(unsigned int))
-{
-	command *cmd = malloc(sizeof(command));
-	cmd->name = str;
-	cmd->funct = sfun;
-	return cmd;
-}
-
-void wrut(unsigned int p)
-{
-	wprintf(L"%lc",(wchar_t)value);
-}
-
-void wred(unsigned int p)
-{
-	 wchar_t emj;
-	 wscanf(L"%lc",&emj);
-	 value = emj;
-}
-
-void chad(unsigned int p)
-{
-	 value = p;
-}
 
 int main()
 {
@@ -53,11 +27,7 @@ int main()
 		_setmode(_fileno(stdin), _O_U8TEXT);
 	#endif
 
-	command* commands[] = {create_command(L"write",&wrut),
-			create_command(L"read",&wred),
-			create_command(L"set",&chad)};
-
-
+	init_commands();
 	commands[1]->funct(0);
 	commands[0]->funct(0);
 

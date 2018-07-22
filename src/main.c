@@ -50,6 +50,7 @@ int main()
 	#endif
 	#ifdef _WIN32
 		_setmode(_fileno(stdout), _O_U8TEXT);
+		_setmode(_fileno(stdin), _O_U8TEXT);
 	#endif
 
 	command* commands[] = {create_command(L"write",&wrut),
@@ -60,7 +61,6 @@ int main()
 	commands[1]->funct(0);
 	commands[0]->funct(0);
 
-	wprintf(L"%lc",(wchar_t)L'✒');
 
 	return 0;
 }

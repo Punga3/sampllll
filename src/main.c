@@ -35,8 +35,6 @@ void wred(unsigned int p)
 {
 	 wchar_t emj;
 	 wscanf(L"%c",&emj);
-	 wprintf(L"%lc",emj);
-	 wprintf(L"%lc",(wchar_t)'✒');
 	 value = emj;
 }
 
@@ -47,7 +45,6 @@ void chad(unsigned int p)
 
 int main()
 {
-	setlocale(LC_ALL,"cs_CZ.UTF-8");
 	#ifdef _WIN32
 		_setmode(_fileno(stdout), _O_U8TEXT);
 	#endif
@@ -57,7 +54,7 @@ int main()
 			create_command(L"set",&chad)};
 
 
-	commands[2]->funct((unsigned int)L'✒');
+	commands[1]->funct(0);
 	commands[0]->funct(0);
 
 	//wprintf(L"%lc",(wchar_t)L'✒')

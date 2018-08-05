@@ -2,6 +2,7 @@
 #include "wchar.h"
 unsigned int value;
 
+
 void wrut(unsigned int p)
 {
 	wprintf(L"%lc",(wchar_t)value);

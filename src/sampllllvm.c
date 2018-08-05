@@ -4,14 +4,14 @@ unsigned int value;
 
 void wrut(unsigned int p) //📁
 {
-	printf(value);
+	printf((char *)value);
 }
 
 void wred(unsigned int p) //✏
 {
-	 wchar_t emj;
-	 wscanf(L"%lc",&emj);
-	 value = emj;
+	 char emj[255];
+	 scanf("%s",emj);
+	 value = (unsigned int)emj;
 }
 
 void chad(unsigned int p) //✒

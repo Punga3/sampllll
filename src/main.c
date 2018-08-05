@@ -34,7 +34,8 @@ int main()
 	#endif
 	init_commands();
 
-	commands[2]->funct("📁");
+	//commands[2]->funct((unsigned int)"📁");
+	commands[1]->funct(0);
 	commands[0]->funct(0);
 
 	return 0;

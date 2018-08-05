@@ -22,7 +22,7 @@
 
 char route[] = "C:\\Users\\Johny\\Desktop\\test.txt";
 
-int main() //😂   💑  ✏  ✒
+int main()
 {
 	setbuf(stdout, NULL);
 	#ifdef linux
@@ -34,8 +34,8 @@ int main() //😂   💑  ✏  ✒
 	#endif
 	init_commands();
 
-	read_file_code(route);
-	display_file_code();
+	commands[2]->funct("📁");
+	commands[0]->funct(0);
 
 	return 0;
 }

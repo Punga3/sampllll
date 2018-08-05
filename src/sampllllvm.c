@@ -2,20 +2,19 @@
 #include "wchar.h"
 unsigned int value;
 
-
-void wrut(unsigned int p)
+void wrut(unsigned int p) //📁
 {
-	wprintf(L"%lc",(wchar_t)value);
+	printf(value);
 }
 
-void wred(unsigned int p)
+void wred(unsigned int p) //✏
 {
 	 wchar_t emj;
 	 wscanf(L"%lc",&emj);
 	 value = emj;
 }
 
-void chad(unsigned int p)
+void chad(unsigned int p) //✒
 {
 	 value = p;
 }

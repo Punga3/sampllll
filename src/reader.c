@@ -8,7 +8,7 @@ unsigned int array_size = 0;
 void read_file_code(char route[])
 {
     FILE * file;
-    char *line = malloc(255);
+    char *line = NULL;
     size_t length = 0;
     ssize_t read;
     array_size = 0;
@@ -17,11 +17,11 @@ void read_file_code(char route[])
 
     while ((read = getline(&line, &length, file)) != -1) {
     	lines[array_size] = line;
-    	printf("%s",lines[array_size]);
+    	line = malloc(255);
     	array_size++;
     }
 
-    printf("\n");
+    free(line);
     fclose(file);
 }
 
@@ -29,7 +29,7 @@ void display_file_code()
 {
 	for(int i = 0; i < array_size; i++)
 	{
-		printf("\n%d ",i);
+		printf("%d - ",i);
 		printf("%s",lines[i]);
 	}
 }
